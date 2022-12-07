@@ -6,10 +6,11 @@ job "app-2048" {
 
   group "game-server" {
     count = 1
-    service {
+    service {  // Consul Confiuration
       name = "game-2048"
       tags = [
         "urlprefix-game.10.0.0.111.nip.io:9999",
+        "urlprefix-game.168.119.179.42.nip.io:9999",
         "urlprefix-/game strip=/game"
       ]
       port = "http"

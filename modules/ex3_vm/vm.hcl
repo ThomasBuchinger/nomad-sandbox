@@ -10,11 +10,12 @@ job "vm" {
     task "centos" {
       driver = "qemu"
 
+      // Does not use libvirt > No interop with anything
       config {
         image_path        = "local/CentOS-Stream-GenericCloud-9-20220308.0.x86_64.qcow2"
         accelerator       = "kvm"
         graceful_shutdown = true
-        # Does not use libvirt. So the Args command is unreasonable long
+        /// The Args parameter is unreasonable long
         args              = [
           "-nodefaults",
           "-no-user-config",
@@ -30,9 +31,9 @@ job "vm" {
       artifact {
         source = "https://cloud.centos.org/centos/9-stream/x86_64/images/CentOS-Stream-GenericCloud-9-20220308.0.x86_64.qcow2"
       }
-      artifact {
-        source = "cloudinit.iso"
-      }
+      // artifact {
+      //   source = "cloudinit.iso"
+      // }
 
       resources {
         cpu    = 1000 # MHz

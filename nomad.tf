@@ -6,9 +6,9 @@ module "ex1" {
 module "ex2" {
   source = "./modules/ex2_ingress"
 }
-module "ex3" {
-  source = "./modules/ex3_vm"
-}
+# module "ex3" {
+#   source = "./modules/ex3_vm"
+# }
 
 terraform {
   required_providers {
@@ -20,7 +20,7 @@ terraform {
 }
 
 provider "nomad" {
-  address = "http://10.0.0.111:4646"
+  address = "http://168.119.179.42:4646/"
 }
 
 

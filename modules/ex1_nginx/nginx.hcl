@@ -41,21 +41,9 @@ job "nginx" {
     }
   }
 
-
   datacenters = ["dc1"]
   update {
     stagger      = "30s"
     max_parallel = 2
   }
-  // service {
-  //   // provider = "nomad"
-  //   provider = "consul"
-  //   port = "http" #
-  //   check {
-  //     type     = "http"
-  //     path     = "/health"
-  //     interval = "10s"
-  //     timeout  = "2s"
-  //   }
-  // }
 }
